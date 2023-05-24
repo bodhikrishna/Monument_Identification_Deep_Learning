@@ -1,0 +1,7 @@
+{
+    "python.languageServer":"Pylance",
+    "python.defaultInterpreterPath": "C:\\Users\\Bodhi Krishna\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "python.analysis.diagnosticsSeverityOverrides": {
+        "reportMissingImports": "none",
+    }
+}
