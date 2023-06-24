@@ -10,6 +10,7 @@ import os
 # View an image
 import random
 import requests
+import uvicorn
 
 from fastapi import FastAPI,Body,File, UploadFile
 from datetime import timedelta, date, datetime
@@ -96,6 +97,7 @@ async def predictCNN(file: UploadFile = File(...)):
        'tanjavur temple', 'victoria memorial']
     class_names=np.array(l)
     response=pred_and_plot(model_1,img,class_names)
+    print()
 
     
 
@@ -105,3 +107,5 @@ async def predictCNN(file: UploadFile = File(...)):
 
 
 ####################-----------------------------------------------------------         
+if __name__ == "__app__":
+    uvicorn.run("app:app", host="0.0.0.0", port=8080)
