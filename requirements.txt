@@ -6,6 +6,4 @@ wikipedia
 geopy
 gtts
 folium
-
 PIL
-requests
