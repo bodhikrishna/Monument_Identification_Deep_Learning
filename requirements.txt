@@ -6,3 +6,4 @@ wikipedia
 geopy
 gtts
 folium
+streamlit_player
