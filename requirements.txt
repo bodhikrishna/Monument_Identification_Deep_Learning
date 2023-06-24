@@ -1,3 +1,4 @@
+uvicorn
 streamlit
 fastapi
 opencv-python
