@@ -42,15 +42,25 @@ def load_image(image_file):
 	return img
 
 # displays a button
+# if image:
+#     st.header("Showing Preview of the uploaded image below:")
+#     st.image([image],width=300)
+  
+#     server_url="http://127.0.0.1:8000/monument"
+#     res = requests.post(url =server_url, files={"file": ("filename", image, "image/jpeg")}, verify=False)
+#     st.subheader("Prediction is:")
+#     st.success(res.json().get("monument_type"))
+#     resultinter=res.json().get("monument_type")
+
 if image:
     st.header("Showing Preview of the uploaded image below:")
-    st.image([image],width=300)
+    st.image([image], width=300)
   
-    server_url="http://127.0.0.1:8000/monument"
-    res = requests.post(url =server_url, files={"file": ("filename", image, "image/jpeg")}, verify=False)
+    server_url = "https://okokokok.streamlit.app/monument"
+    res = requests.post(url=server_url, files={"file": ("filename", image, "image/jpeg")}, verify=False)
     st.subheader("Prediction is:")
     st.success(res.json().get("monument_type"))
-    resultinter=res.json().get("monument_type")
+    resultinter = res.json().get("monument_type")
 
     
     st.subheader("Description:")
