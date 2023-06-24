@@ -6,4 +6,3 @@ wikipedia
 geopy
 gtts
 folium
-PIL
