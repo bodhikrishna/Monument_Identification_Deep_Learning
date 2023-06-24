@@ -1,3 +1,4 @@
+streamlit
 fastapi
 opencv-python
 tensorflow== 2.9.0
