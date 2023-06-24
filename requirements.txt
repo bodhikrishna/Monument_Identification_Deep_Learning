@@ -7,3 +7,4 @@ geopy
 gtts
 folium
 streamlit_player
+streamlit_folium
