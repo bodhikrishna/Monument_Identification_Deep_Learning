@@ -4,5 +4,3 @@ tensorflow== 2.9.0
 wikipedia
 geopy
 gtts
-requests
-io
