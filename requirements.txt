@@ -6,7 +6,6 @@ wikipedia
 geopy
 gtts
 folium
-streamlit_folium
-streamlit_player
+
 PIL
 requests
