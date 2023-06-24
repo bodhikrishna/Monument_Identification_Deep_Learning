@@ -15,7 +15,7 @@ from PIL import Image
 
 
 # importing css file to add more css to existing frontend
-with open("design.css") as source_des:
+with open("frontend/design.css") as source_des:
     st.markdown(f"<style>{source_des.read()}</style>", unsafe_allow_html=True)
 st.markdown("![Alt Text](https://media.giphy.com/media/doXBzUFJRxpaUbuaqz/giphy.gif)")
 st.set_option("deprecation.showfileUploaderEncoding", False)
