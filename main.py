@@ -6,6 +6,10 @@ from PIL import Image
 from geopy.geocoders import Nominatim
 from gtts import gTTS
 from io import BytesIO
+from streamlit_player import st_player
+import folium
+import streamlit as st
+from streamlit_folium import st_folium
 
 st.set_page_config(
     page_title = 'Image feature prediction'
@@ -69,6 +73,7 @@ if image:
         st.caption(result)
     elif resultinter=="Sun Temple Konark":
         result=wikipedia.summary("Konark Sun Temple",sentences=10,auto_suggest=False)
+        st_player("https://youtu.be/LiH78uM94KU")
         st.caption(result)
     elif resultinter=="tanjavur temple":
         result=wikipedia.summary("Thanjavur Temple",sentences=10,auto_suggest=True)
@@ -87,6 +92,29 @@ if image:
     st.audio(sound_file)
         
     address,latitude,longitude=get_map(resultinter)
-    data=[[latitude,longitude]]
-    df=pd.DataFrame(data,columns=['lat','lon'])
-    st.map(df)
+    pos=folium.Map(height=400,location=[latitude,longitude],zoom_start=17)
+    folium.Marker(
+        [latitude,longitude],popup=address,tooltip="Click Here to view address",icon=folium.Icon(color='red',icon='none')
+    ).add_to(pos)
+    # folium.TileLayer('Stamen Terrain').add_to(pos)
+    # folium.TileLayer('Stamen Toner').add_to(pos)
+    # folium.TileLayer('Stamen Water Color').add_to(pos)
+    # folium.TileLayer('cartodbpositron').add_to(pos)
+    # folium.TileLayer('cartodbdark_matter').add_to(pos)
+    # folium.LayerControl().add_to(pos)
+    
+    st_data = st_folium(pos,width=1250)
+        
+    
+    
+    
+    
+    
+        
+    
+
+
+
+    
+
+    
