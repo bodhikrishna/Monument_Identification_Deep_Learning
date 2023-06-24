@@ -42,7 +42,7 @@ if image:
     st.header("Showing Preview of the uploaded image below:")
     st.image([image],width=300)
   
-    server_url="https://mnmt-3.streamlit.app/"
+    server_url="http://127.0.0.1:8000/monument"
     res = requests.post(url =server_url, files={"file": ("filename", image, "image/jpeg")}, verify=False)
     st.subheader("Prediction is:")
     st.success(res.json().get("monument_type"))
