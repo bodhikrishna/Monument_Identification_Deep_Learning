@@ -31,8 +31,12 @@ model_1 = Sequential([
   Dense(128, activation='relu'),
   Dense(24, activation='softmax') 
 ])
-
 model_1.load_weights("saved_trained_model.h5")
+
+
+
+
+
 app = FastAPI(title="monument detection", description="BNMIT")
 
 # Create a function to import an image and resize it to be able to be used with our model
