@@ -10,6 +10,7 @@ import os
 # View an image
 import random
 import requests
+import uvicorn
 
 from fastapi import FastAPI,Body,File, UploadFile
 from datetime import timedelta, date, datetime
@@ -31,8 +32,12 @@ model_1 = Sequential([
   Dense(128, activation='relu'),
   Dense(24, activation='softmax') 
 ])
-
 model_1.load_weights("saved_trained_model.h5")
+
+
+
+
+
 app = FastAPI(title="monument detection", description="BNMIT")
 
 # Create a function to import an image and resize it to be able to be used with our model
@@ -92,6 +97,7 @@ async def predictCNN(file: UploadFile = File(...)):
        'tanjavur temple', 'victoria memorial']
     class_names=np.array(l)
     response=pred_and_plot(model_1,img,class_names)
+    print()
 
     
 
