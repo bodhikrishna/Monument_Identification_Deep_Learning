@@ -107,5 +107,3 @@ async def predictCNN(file: UploadFile = File(...)):
 
 
 ####################-----------------------------------------------------------         
-if __name__ == "__app__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8080)
