@@ -1,4 +1,4 @@
-uvicorn app:app --reload
+uvicorn app:app
 streamlit
 fastapi
 opencv-python
