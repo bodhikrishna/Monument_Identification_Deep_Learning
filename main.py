@@ -1,4 +1,5 @@
 import requests
+import uvicorn
 import pandas as pd
 import wikipedia
 import streamlit as st

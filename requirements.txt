@@ -1,4 +1,4 @@
-uvicorn app:app
+uvicorn
 streamlit
 fastapi
 opencv-python
