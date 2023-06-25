@@ -10,7 +10,6 @@ import os
 # View an image
 import random
 import requests
-import uvicorn
 
 from fastapi import FastAPI,Body,File, UploadFile
 from datetime import timedelta, date, datetime
@@ -22,17 +21,26 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense
 
 model_1 = Sequential([
-  Conv2D(10, 5, activation='relu', input_shape=(300, 300, 3)),
-  Conv2D(10, 5, activation='relu'),
+  Conv2D(32, 5, activation='relu', input_shape=(300, 300, 3)),
   MaxPool2D(),
-  Conv2D(10, 5, activation='relu'),
-  Conv2D(10, 5, activation='relu'),
+  Conv2D(32, 5, activation='relu'),
   MaxPool2D(),
+  Conv2D(64, 5, activation='relu'),
+  MaxPool2D(),
+  Conv2D(64, 5, activation='relu'),
+  MaxPool2D(),
+#   Conv2D(10, 5, activation='relu'),
+#   Conv2D(10, 5, activation='relu'),
+#   MaxPool2D(),
+#   Conv2D(10, 5, activation='relu'),
+#   Conv2D(10, 5, activation='relu'),
   Flatten(),
+  Dense(512, activation='relu'),
   Dense(128, activation='relu'),
-  Dense(24, activation='softmax') 
+  Dense(64, activation='relu'),
+  Dense(17, activation='softmax') 
 ])
-model_1.load_weights("saved_trained_model.h5")
+model_1.load_weights("save_new_weights_2.h5")
 
 
 
@@ -87,17 +95,14 @@ def pred_and_plot(model, img, class_names):
 async def predictCNN(file: UploadFile = File(...)):
     img=await file.read()
     print(file.content_type)
-    l=['Ajanta Caves', 'Charar-E- Sharif', 'Chhota_Imambara',
-       'Ellora Caves', 'Fatehpur Sikri', 'Gateway of India',
-       'Humayuns Tomb', 'India gate', 'Khajuraho',
-       'Sun Temple Konark', 'alai_darwaza', 'alai_minar',
-       'basilica_of_bom_jesus', 'charminar', 'golden temple',
-       'hawa mahal', 'iron_pillar', 'jamali_kamali_tomb',
-       'lotus_temple', 'mysore_palace', 'qutub_minar', 'tajmahal',
-       'tanjavur temple', 'victoria memorial']
+    l=['Amr ibn al-Aas Mosque', 'Burj Khalifa', 'Charar-e-Sharief',
+       'Charminar', 'Christ the Redeemer', 'Eiffel Tower',
+       'Gateway of India', 'Golden Temple', 'Great Wall of China',
+       'India Gate', 'Machu Pichu', 'Pyramid of Giza', 'Qutub Minar',
+       'Roman Colosseum', 'Sun Temple Konark', 'Taj Mahal',
+       'Victoria Memorial']
     class_names=np.array(l)
     response=pred_and_plot(model_1,img,class_names)
-    print()
 
     
 

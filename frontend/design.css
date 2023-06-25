@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.css-10trblm.e16nr0p30{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* border: 2px solid white; */
+    /* background-color: black; */
+    /* border-radius: 12px;     */
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 12px black;
+    text-decoration: none;
+    padding: 4px;
+
+
+}
+.css-dg4u6x{
+    /* border: 2px solid black; */
+    padding: 12px 23px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 10px whitesmoke;
+ }
+ img,svg{
+    height: 400px;
+    width: 400px;
+    border-radius: 12px;
+ }
+
+.css-1fv8s86.e16nr0p34{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.css-1kyxreq.etr89bj2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+p{
+
+    text-align: justify;
+    text-shadow: 2px 2px 12px red;
+    line-height: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    font-family: 'Lato', sans-serif;
+
+
+}
+.css-k1vhr4 {
+    background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    /* background:linear-gradient(darkblue,grey); */
+    /* background:url("https://media.giphy.com/media/doXBzUFJRxpaUbuaqz/giphy.gif"); */
+}
